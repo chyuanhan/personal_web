@@ -1,0 +1,57 @@
+.Introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 23vh;
+  color: var(--textcolor);
+}
+
+.Introduction h1 {
+  font-size: 5rem;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.Introduction h2 span {
+  color: var(--nice-color);
+}
+
+.Introduction p {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+  justify-content: center;
+  text-align: center;
+  margin: 1em 0;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.Introduction button {
+  outline: none;
+  border: none;
+  width: 150px;
+  height: 50px;
+  color: black;
+  font-size: 1.3rem;
+  background-color: var(--nice-color);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5 ease;
+}
+
+.Introduction button:hover {
+  color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  .Introduction h1{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Introduction p{
+    width: fit-content;
+  }
+}

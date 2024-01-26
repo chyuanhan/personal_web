@@ -1,0 +1,256 @@
+:root{
+  --tw-gradient-from: rgb(255 255 255 / 0.1);
+  --tw-gradient-to: var(--nav-color);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to)
+}
+
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--nav-color);
+  transition: transform 0.3s ease;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 0;
+}
+
+ul div{
+  margin: 12px;
+}
+
+ul li {
+  padding: 10px;
+  font-size: 1.8rem;
+  color: var(--textcolor);
+}
+
+ul li:hover {
+  cursor: pointer;
+}
+
+ul .navigation a {
+  display: inline-block;
+  position: relative;
+  align-items: center;
+  text-decoration: none;
+  color: var(--textcolor);
+  transition: color 0.3s ease;
+}
+
+ul .navigation a:before,
+ul .navigation a:after {
+  display: block;
+  content: "";
+  position: absolute;
+  background: var(--nice-color);
+  z-index: -5;
+  border-radius: 10px;
+}
+
+ul .navigation a:before {
+  top: -0.1rem;
+  bottom: 100%;
+  left: -0.1rem;
+  right: calc(100% + 0.1rem);
+  transition: left 0.5s, right 0.5s, bottom 0.5s;
+}
+
+ul .navigation a:after {
+  top: 100%;
+  bottom: -0.1rem;
+  left: calc(100% + 0.1rem);
+  right: -0.1rem;
+  transition: left 0.5s, right 0.5s, top 0.5s;
+}
+
+ul .navigation a:hover:before {
+  top: -0.1rem;
+  bottom: 0;
+  left: -0.1rem;
+  right: 0;
+}
+
+ul .navigation a:hover:after {
+  top: 0;
+  bottom: -0.1rem;
+  left: 0;
+  right: -0.1rem;
+}
+
+.nav-links .Name {
+  cursor: default !important;
+}
+
+.icons {
+  margin-right: 20px;
+  color: var(--textcolor);
+  transition: color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  font-size: 0.9rem;
+  top: 1vw;
+}
+.icons:hover {
+  color: var(--nice-color);
+}
+.container {
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  display: inline-flex;
+  padding: 4px 12px;
+  position: relative;
+  border: 2px solid var(--nice-color);
+}
+
+.Resume {
+  width: 120px;
+  border: none;
+  outline: none;
+  transition: ease-out 0.3s;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--nice-color);
+  z-index: 1;
+  background-color: var(--nav-dark);
+  font-weight: 400;
+}
+
+.Resume:hover {
+  color: #fff;
+}
+.Resume::before {
+  transition: 0.5 all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: "";
+  background-color: var(--nice-color);
+}
+.Resume:hover:before {
+  transition: 0.3s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  z-index: -1;
+}
+
+
+.icon-show{
+  display: none;
+}
+
+@media screen and (max-width: 1024px){
+  .navbar {
+      position: fixed;
+      top: 0;
+      height: 100vh;
+      width: 40%;
+      background-color: linear-gradient(to top left, var(--tw-gradient-stops));
+      backdrop-filter: blur(16px);
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+      left: -100%;
+      transition: all .3s ease-in-out;
+      z-index: 100;
+    }
+  
+    .navbar ul {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+    }
+  
+    .navbar .navigation {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .mobile-nav-show {
+      left: 0px;
+    }
+  
+    .icon-show {
+      position: absolute;
+      display: block;
+      top: 1.5rem;
+      right: 2rem;
+      z-index: 1000
+    }
+  
+    .icon {
+      width: 2rem;
+      height: 2rem;
+      color: var(--textcolor);
+      margin-right: 0.5rem;
+      cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 768px){
+  .navbar {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 40%;
+    background-color: linear-gradient(to top left, var(--tw-gradient-stops));
+    backdrop-filter: blur(16px);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    left: -100%;
+    transition: all .3s ease-in-out;
+    z-index: 100;
+  }
+
+  .navbar ul{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+  }
+
+  .navbar .navigation {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-nav-show{
+    left: 0px;
+  }
+
+  .icon-show{
+    position: absolute;
+    display: block;
+    top: 1.5rem;
+    z-index: 1000
+  }
+
+  .icon{
+    width: 2rem;
+    height: 2rem;
+    color: var(--textcolor);
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+  
+}
