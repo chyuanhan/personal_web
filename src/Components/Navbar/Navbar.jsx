@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { RiCloseLine } from 'react-icons/ri';
@@ -11,7 +11,8 @@ import Pdf from "../../Images/Resume - MA HAN CHYUAN.pdf";
 function Navbar() {
 
   const [showMobileNav,setShowMobileNav] = useState(false)
-  
+  const navbarRef = useRef(null)
+
   const onResumeClick = () => {
     window.open(Pdf);
   };
@@ -22,21 +23,21 @@ function Navbar() {
 
   useEffect(()=>{
     const closeNavbarOnOutsideClick= (e) => {
-      if(showMobileNav && !e.target.closest("#navbar")){
+      if(navbarRef.current && !navbarRef.current.contains(e.target)){
         setShowMobileNav(false);
       }
     }
 
-    document.addEventListener("click", closeNavbarOnOutsideClick);
+    document.addEventListener("mousedown", closeNavbarOnOutsideClick);
 
     return () => {
-      document.removeEventListener("click", closeNavbarOnOutsideClick);
+      document.removeEventListener("mousedown", closeNavbarOnOutsideClick);
     };
   },[showMobileNav])
 
   return (
     <nav id="navbar" >
-      <div className={`navbar ${showMobileNav ? "mobile-nav-show" : ""}`}>
+      <div className={`navbar ${showMobileNav ? "mobile-nav-show" : ""}`} ref={navbarRef}>
         <ul className="nav-links">
           <div>
             <a href="https://github.com/chyuanhan" target="_blank" className="icons" rel="noreferrer">
