@@ -6,7 +6,7 @@ import { HiOutlineMenu } from 'react-icons/hi';
 import { Link } from "react-scroll";
 import "./Navbar.css";
 
-import Pdf from "../../Images/MA HAN CHYUAN.pdf";
+import Pdf from "../../Images/Resume - MA HAN CHYUAN.pdf";
 
 function Navbar() {
 
