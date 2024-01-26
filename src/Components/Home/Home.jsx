@@ -11,7 +11,7 @@ function Home() {
   useEffect(() => {
     const typewriter = new Typewriter(typewriterRef.current, {
       strings: [
-        "I am a Computer Science Student",
+        "I am a Front-end developer",
         "I like coding",
         "I enjoy watching shows",
         "Keep scrolling!",
