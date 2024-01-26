@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { RiCloseLine } from 'react-icons/ri';
@@ -19,6 +19,20 @@ function Navbar() {
   const toggleShowMobileNav = () => {
     setShowMobileNav(!showMobileNav)
   }
+
+  useEffect(()=>{
+    const closeNavbarOnOutsideClick= (e) => {
+      if(showMobileNav && !e.target.closest("#navbar")){
+        setShowMobileNav(false);
+      }
+    }
+
+    document.addEventListener("click", closeNavbarOnOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", closeNavbarOnOutsideClick);
+    };
+  },[showMobileNav])
 
   return (
     <nav id="navbar" >
