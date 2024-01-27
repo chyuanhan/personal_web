@@ -24,7 +24,7 @@ function About() {
       <div className='content-wrapper'>
         <div className='about-text'>
           <p>
-            Hey there! I'm a passionate web developer specializing in front-end development. I have a good understanding of front-end development through self-study and I am looking for opportunities to develop as I want to improve my skills in this field.
+            Hey there! I'm a passionate web developer specializing in front-end development. I have a good understanding of front-end development and I am looking for opportunities to develop as I want to improve my skills in this field.
           </p>
           <br />
           <p>

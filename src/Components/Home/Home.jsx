@@ -38,7 +38,7 @@ function Home() {
           <span ref={typewriterRef}></span>
         </h2>
         <p>
-          I'm a self-taught enthusiast in front-end development seeking many ways to improve my skills through problem-solving and creating various projects! Scroll down to learn more about me.
+          I'm a Front-end developer seeking many ways to improve my skills through problem-solving and creating various projects! Scroll down to learn more about me.
         </p>
         <Link to="Contact"  smooth={true} duration={900}>
           <button>Contact Me</button>
